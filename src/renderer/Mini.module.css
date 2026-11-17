@@ -1,0 +1,42 @@
+:global(html[data-view='mini']) { background: transparent; }
+
+.card {
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  height: calc(100% - 13px);
+  margin: 5px 7px 8px;
+  padding: 7px 13px 8px;
+  border: 1px solid #e7e1d7;
+  border-radius: 17px;
+  background:
+    radial-gradient(ellipse at 0 0, #edf8bd 0%, transparent 64%),
+    radial-gradient(ellipse at 100% 100%, #fbe7e4 0%, transparent 63%),
+    #fcf8f3;
+  box-shadow: 0 3px 7px #6b594f28;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+.card h1 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--muted);
+}
+
+.countdown {
+  display: flex;
+  align-items: baseline;
+  gap: .22em;
+  color: var(--ink);
+  font-size: 32px;
+  font-weight: 680;
+  letter-spacing: -.04em;
+  line-height: 1.12;
+  white-space: nowrap;
+  -webkit-app-region: no-drag;
+}
+
+.countdown[data-long] { font-size: 28px; }
+.countdown small { margin-left: .16em; font-size: .58em; letter-spacing: 0; }

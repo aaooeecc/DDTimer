@@ -1,0 +1,123 @@
+.empty {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 14px;
+  overflow: auto;
+}
+.createCard {
+  width: min(100%, 370px);
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel-background);
+  box-shadow: 0 12px 42px #58472f1c;
+}
+.createIcon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid #d8ea95;
+  background: var(--lime);
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.createIcon svg { width: 24px; height: 24px; }
+.createCard h1 { font-size: 23px; font-weight: 670; }
+.createCard p { color: var(--muted); margin: 5px 0 15px; line-height: 1.5; }
+.createCard form { padding: 0; }
+.createCard form > button[type='submit'] { width: 100%; margin-top: 2px; }
+.emptySettings { display: flex; margin: 10px auto 0; min-height: 29px; color: var(--muted); font-size: 12px; }
+.emptySettings:hover { color: var(--accent); }
+.modal, .drawer {
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 16px 50px #58472f26;
+}
+.modal::backdrop, .drawer::backdrop { background: #30281d34; }
+.modal { width: min(calc(100% - 28px), 388px); max-height: calc(100% - 52px); border-radius: 11px; }
+.drawer {
+  position: fixed;
+  inset: 34px 0 0 auto;
+  margin: 0;
+  max-height: calc(100% - 34px);
+  width: min(100%, 385px);
+  height: calc(100% - 34px);
+  border-radius: 11px 0 0 0;
+}
+.drawer[open] { display: flex; flex-direction: column; }
+.dialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: none;
+  padding: 11px 13px 9px 16px;
+}
+.dialogHeader h2 { font-size: 19px; font-weight: 650; }
+.fields { display: grid; gap: 11px; padding: 0 16px 17px; }
+.fields > label { display: block; font-weight: 550; }
+.fields > label > :is(input, textarea, select) { margin-top: 5px; display: block; font-weight: 400; }
+.fields small { font-size: 11px; color: var(--muted); margin-left: 4px; font-weight: 400; }
+.fields p { font-size: 12px; }
+.hint { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.taskDue { margin: 0; padding: 0; border: 0; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 98px; gap: 8px; }
+.taskDue legend { font-weight: 550; margin-bottom: 5px; }
+.taskDue input:disabled { opacity: .6; }
+.formActions { display: flex; justify-content: flex-end; gap: 10px; padding-top: 3px; }
+.drawerContent { padding: 1px 16px 16px; min-height: 0; overflow: auto; scrollbar-width: thin; scrollbar-color: #c7bdb1 transparent; }
+.drawerSection { display: grid; gap: 8px; padding: 12px 0; border-top: 1px solid var(--line); }
+.drawerSection h3 { font-size: 15px; font-weight: 650; }
+.toggleLine { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 23px; }
+.toggleLine span { color: var(--muted); font-size: 12px; }
+.toggleLine select { width: 136px; }
+.drawer input[role='switch'] {
+  appearance: none;
+  display: block;
+  flex: none;
+  width: 32px;
+  height: 18px;
+  border: 1px solid #c9c0b1;
+  border-radius: 99px;
+  margin: 0;
+  background: #d8d0c1;
+  cursor: pointer;
+}
+.drawer input[role='switch']::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 3px;
+  background: var(--panel);
+}
+.drawer input[role='switch']:checked { border-color: var(--accent); background: var(--accent); }
+.drawer input[role='switch']:checked::after { margin-left: 17px; }
+.rules { display: grid; gap: 8px; }
+.rule { min-width: 0; margin: 0; padding: 6px; display: grid; gap: 5px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+.ruleTop, .ruleTime { display: flex; gap: 7px; align-items: center; }
+.ruleTime span, .ruleTime small { white-space: nowrap; color: var(--muted); font-size: 11px; }
+.ruleTime small { min-width: 22px; }
+.rule input:not([type='checkbox']) { min-height: 29px; padding: 4px 7px; font-size: 12px; }
+.sectionActions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.drawerSection form .sectionActions, form.drawerSection .sectionActions { justify-content: space-between; }
+.historyList { display: grid; gap: 8px; padding-block: 3px 12px; }
+.historyList button {
+  display: grid;
+  justify-items: start;
+  gap: 5px;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  text-align: left;
+}
+.historyList button:hover { border-color: var(--accent); }
+.historyList strong { overflow-wrap: anywhere; }
+.historyList span { color: var(--muted); font-size: 14px; }
+.historyList small { color: var(--muted); }

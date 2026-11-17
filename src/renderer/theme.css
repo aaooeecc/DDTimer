@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", "Microsoft YaHei UI", "PingFang SC", system-ui, sans-serif;
+  color: #121310;
+  background: #f8f2e9;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  --panel: #fffcf6;
+  --surface: #f9f5ed;
+  --line: #e7e0d6;
+  --border: #d7cfc1;
+  --ink: #121310;
+  --ink-secondary: #373a31;
+  --muted: #5e6159;
+  --accent: #08796e;
+  --accent-soft: #edf4d9;
+  --lime: #defb80;
+  --teal: #14988a;
+  --red: #a63349;
+  --panel-background: linear-gradient(155deg, #fffcf5d9, #fffaf6a8);
+}
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button, input, textarea, select { font: inherit; }
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+button:disabled { cursor: default; opacity: .52; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+button, input[type='checkbox'] { touch-action: manipulation; }
+svg { flex-shrink: 0; }
+h1, h2, h3, p { margin: 0; }
+input:not([type='checkbox']), textarea, select {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+textarea { resize: vertical; }
+input[type='checkbox'] { accent-color: var(--accent); }
+.primary, .secondary {
+  min-height: 32px;
+  padding: 5px 11px;
+  border-radius: 99px;
+  font-weight: 550;
+}
+.primary {
+  border: 1px solid #d4ed72;
+  background: linear-gradient(115deg, #e6ff94, var(--lime));
+  color: var(--ink);
+}
+.primary:hover:not(:disabled) { background: #d5f36f; }
+.secondary {
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+.secondary:hover:not(:disabled) { background: var(--surface); }
+.icon-button {
+  width: 29px;
+  min-width: 29px;
+  height: 29px;
+  border-radius: 7px;
+  color: inherit;
+}
+.icon-button:hover:not(:disabled) { background: #28272a0b; }
+.danger-text { color: var(--red); }
+.form-error {
+  display: flex;
+  gap: 8px 12px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--red);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form-error button { min-height: 30px; flex: none; color: var(--accent); text-decoration: underline; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

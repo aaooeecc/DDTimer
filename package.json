@@ -1,0 +1,70 @@
+{
+  "name": "dd-timer",
+  "productName": "DD Timer",
+  "version": "1.2.0",
+  "private": true,
+  "description": "本地桌面计划计时器",
+  "main": "out/main/index.js",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "dev": "electron-vite dev",
+    "demo": "electron-vite dev -- --demo",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/unit",
+    "test:desktop": "node tests/desktop.mjs",
+    "build": "npm run typecheck && electron-vite build",
+    "package:win": "npm run build && electron-builder --win nsis --x64"
+  },
+  "dependencies": {
+    "@js-temporal/polyfill": "0.5.1",
+    "better-sqlite3": "12.8.0",
+    "lucide-react": "0.511.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13",
+    "@types/node": "24.10.4",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.2",
+    "electron": "41.10.7",
+    "electron-builder": "26.8.1",
+    "electron-vite": "5.0.0",
+    "playwright": "1.58.2",
+    "resedit": "1.7.2",
+    "typescript": "5.9.3",
+    "vite": "7.3.1",
+    "vitest": "4.0.18"
+  },
+  "build": {
+    "appId": "local.tstimer.desktop",
+    "artifactName": "DD-Timer-${version}-${arch}-Setup.${ext}",
+    "afterPack": "build/windows-resources.cjs",
+    "files": [
+      "out/**/*",
+      "package.json",
+      "!**/*.map"
+    ],
+    "extraResources": [{ "from": "build/icon.ico", "to": "icon.ico" }],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": "nsis",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": false
+    }
+  }
+}

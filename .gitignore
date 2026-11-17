@@ -1,0 +1,32 @@
+# Dependencies and generated output
+node_modules/
+/out/
+/dist/
+/coverage/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+*.tsbuildinfo
+
+# Local settings, data, and logs
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.sqlite
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+*.log
+*.partial
+*.tmp
+
+# Editor and operating system files
+/.idea/
+/.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+desktop.ini
